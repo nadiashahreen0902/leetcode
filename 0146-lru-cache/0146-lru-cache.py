@@ -1,8 +1,8 @@
 class LRUCache:
     class Node:
         def __init__ (self,key,val):
-            self.key = key
             self.val =val
+            self.key = key
             self.prev = None
             self.next = None
     def __init__(self, capacity: int):
@@ -36,7 +36,7 @@ class LRUCache:
             curr =  self.m[key]
             del self.m[key]
             self.deleteNode(curr)
-        if len(self.m)== self.cap:
+        elif len(self.m)== self.cap:
             del self.m[self.tail.prev.key]
             self.deleteNode(self.tail.prev)
         self.addNode(self.Node(key,value))
