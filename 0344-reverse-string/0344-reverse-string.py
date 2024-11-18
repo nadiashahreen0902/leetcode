@@ -5,9 +5,11 @@ class Solution:
         """
         p1=0
         p2=len(s)-1
-        while(p1<p2):
-            s[p1],s[p2]=s[p2],s[p1]
-            p1=p1+1
-            p2=p2-1
+        self.reverse(s,p1,p2)
         print(s)
+    def reverse(self,arr,p1,p2):
+        if(p1>=p2):
+            return
+        arr[p1],arr[p2]=arr[p2],arr[p1]
+        self.reverse(arr,p1+1,p2-1)
         
